@@ -42,19 +42,19 @@ namespace Livraria
         {
             txtSenhaLogin.UseSystemPasswordChar = true;
         }
-       
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ConectaBanco conecta = new ConectaBanco();
-               if(conecta.verifica(txtUserLogin.Text,txtSenhaLogin.Text)==true)
+            if (conecta.verifica(txtUserLogin.Text, txtSenhaLogin.Text) == true)
             {
                 Livraria liv = new Livraria();
                 this.Hide();
                 liv.ShowDialog();
                 this.Close();
             }
-            else 
-            { 
+            else
+            {
                 MessageBox.Show("Usuário ou senha incorreta" + conecta.mensagem);
             }
 
@@ -63,6 +63,11 @@ namespace Livraria
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
